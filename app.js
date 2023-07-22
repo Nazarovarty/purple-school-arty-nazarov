@@ -1,12 +1,12 @@
 const greetingLang = prompt('Введите нужный язык');
-switch (true) {
-    case String(greetingLang) === 'en':
+switch (greetingLang) {
+    case 'en':
         console.log('Hello!');
         break;
-    case String(greetingLang) === 'de':
+    case 'de':
         console.log('Gutten tug!');
         break;
-    case String(greetingLang) === 'ru':
+    case 'ru':
         console.log('Здравствуйте!');
         break;
     default:
