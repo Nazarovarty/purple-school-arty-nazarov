@@ -5,6 +5,6 @@ const addressLat = 55.89;
 const addressLong = 79.105;
 
 
-let distance = Math.round(Math.sqrt((addressLat - positionLat) ** 2 + (addressLong - positionLong) ** 2));
+const distance = Math.round(Math.sqrt((addressLat - positionLat) ** 2 + (addressLong - positionLong) ** 2));
 
-console.log((distance));
+console.log(`Расстояние между двух точек: ${distance} km`);
