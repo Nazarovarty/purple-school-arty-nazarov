@@ -3,7 +3,7 @@ const arrCopy = [...arr];
 
 function sortArray(arrCopy) {
     for(let i = 0; i < arrCopy.length; i++) {
-        for(let j = i; j < arrCopy.length; j++) {
+        for(let j = i + 1; j < arrCopy.length; j++) {
             if(arrCopy[i] > arrCopy[j]) {
                 [arrCopy[i], arrCopy[j]] = [arrCopy[j], arrCopy[i]];
             }
