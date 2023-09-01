@@ -1,14 +1,16 @@
 const crypto = 'password';
-function getCrypto(crypto) {
-    const toSplit = crypto.split('');
-    const cryptedPartOne = toSplit.slice(0, 4).reverse().join('');
-    const [cryptedPartTwo] = toSplit.slice(0, 8).reverse();
-    const [cryptedPartThree] = toSplit.slice(0, 6).reverse();
-    const [cryptedPartFour] = toSplit.slice(0, 7).reverse();
-    const [cryptedPartFive] = toSplit.slice(0, 5).reverse();
-    const crypted = cryptedPartOne.concat(cryptedPartTwo, cryptedPartThree, cryptedPartFour, cryptedPartFive);
-        return crypted;
-};
+const getCrypto = (crypto) => {
+    const cryptoCopy = [...crypto];
+    const midCrypto = Math.floor(cryptoCopy.length/2);
+    const firstPartCrypto = cryptoCopy.slice(0, midCrypto).reverse();
+    const secondPartCrypto = cryptoCopy.slice(midCrypto);
+    const secondPartLength = secondPartCrypto.length;
+    [secondPartCrypto[0], secondPartCrypto[secondPartLength - 1]] = [secondPartCrypto[secondPartLength - 1], secondPartCrypto[0]];
+    
+        return [...firstPartCrypto, ...secondPartCrypto].join('');
+}
+
+
 
 const checkCrypto = (crypted, crypto) => {
     return getCrypto(crypto) === crypted;
@@ -16,3 +18,4 @@ const checkCrypto = (crypted, crypto) => {
 
 console.log(getCrypto('password'));
 console.log(checkCrypto('ssapdorw', 'password'));
+
