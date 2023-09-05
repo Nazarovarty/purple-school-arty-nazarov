@@ -10,8 +10,6 @@ const getCrypto = (crypto) => {
         return [...firstPartCrypto, ...secondPartCrypto].join('');
 }
 
-
-
 const checkCrypto = (crypted, crypto) => {
     return getCrypto(crypto) === crypted;
 }
