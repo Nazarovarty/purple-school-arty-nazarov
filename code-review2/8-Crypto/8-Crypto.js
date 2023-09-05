@@ -6,8 +6,8 @@ const getCrypto = (crypto) => {
     const secondPartCrypto = cryptoCopy.slice(midCrypto);
     const secondPartLength = secondPartCrypto.length;
     [secondPartCrypto[0], secondPartCrypto[secondPartLength - 1]] = [secondPartCrypto[secondPartLength - 1], secondPartCrypto[0]];
-    
-        return [...firstPartCrypto, ...secondPartCrypto].join('');
+
+    return [...firstPartCrypto, ...secondPartCrypto].join('');
 }
 
 const checkCrypto = (crypted, crypto) => {
